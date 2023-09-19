@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+//= link application.css
+
+body {
+  background-color: #141414;
+}

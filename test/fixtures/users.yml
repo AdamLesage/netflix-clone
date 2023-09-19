@@ -2,8 +2,10 @@
 
 one:
   username: MyString
-  avatar_picture: MyString
+  email: MyString
+  password_digest: MyString
 
 two:
   username: MyString
-  avatar_picture: MyString
+  email: MyString
+  password_digest: MyString

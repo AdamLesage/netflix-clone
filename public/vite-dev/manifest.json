@@ -1,0 +1,14 @@
+{
+  "entrypoints/application.css": {
+    "file": "assets/application-450fa5fc.css",
+    "src": "entrypoints/application.css"
+  },
+  "entrypoints/application.js": {
+    "css": [
+      "assets/application-450fa5fc.css"
+    ],
+    "file": "assets/application-203b20f3.js",
+    "isEntry": true,
+    "src": "entrypoints/application.js"
+  }
+}

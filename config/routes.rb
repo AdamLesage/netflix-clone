@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  root "netflix#index"
+  root 'netflix#index'
 end
