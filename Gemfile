@@ -28,7 +28,7 @@ gem 'actionmailer', '~> 7.0.0'
 
 gem 'bcrypt', '~> 3.1.7'
 
-gem "jbuilder"
+gem "jbuilder", "~> 2.7"
 
 gem "byebug"
 
