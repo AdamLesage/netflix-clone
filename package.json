@@ -10,6 +10,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "@mdi/font": "^7.2.96",
     "@vitejs/plugin-vue": "^4.2.3",
+    "pinia": "^2.1.6",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-vuetify": "^1.0.2",
     "vue": "3.2.33",
