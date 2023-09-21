@@ -1,5 +1,5 @@
 import { createApp } from 'vue/dist/vue.esm-bundler';
-
+import { createPinia } from 'pinia'
 import 'vuetify/styles';
 import { mdi } from 'vuetify/iconsets/mdi';
 import { createVuetify } from 'vuetify';
@@ -20,11 +20,13 @@ const vuetify = createVuetify({
 });
 
 const app = createApp();
+const pinia = createPinia()
 
 window.$http = axios;
 axios.defaults.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 app.component('HomePage', HomePage);
 app.use(vuetify);
+app.use(pinia)
 
 app.mount('#app');

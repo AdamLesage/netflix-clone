@@ -13,7 +13,7 @@
     "pinia": "^2.1.6",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-vuetify": "^1.0.2",
-    "vue": "3.2.33",
+    "vue": "3",
     "vuetify": "^3.3.11"
   }
 }
