@@ -4,7 +4,7 @@
       <div class="profile-gate-label">Qui est-ce ?</div>
       <div class="choose-profile">
         <div v-for="user in userStore.getUsers" class="profile" @click="selectUser(user)">
-          <a href="/browse">
+          <a href="/browse" style="text-decoration: none;">
             <div class="profile-icon">
               <v-img :src="user.image.image_link" class="image-profile"></v-img>
             </div>
@@ -13,6 +13,10 @@
         </div>
       </div>
     </div>
+
+    <span>
+      <a href="ManageProfiles" class="profile-button">Gérer les profils</a>
+    </span>
   </div>
 </template>
 
@@ -116,4 +120,21 @@ export default {
     border-color: #fff;
   }
   
+  .profile-button {
+    background-color: transparent;
+    border: 1px solid gray;
+    color: grey;
+    cursor: pointer;
+    display: block;
+    font-size: 1.2vw;
+    letter-spacing: 2px;
+    margin: 2em 0 1em;
+    padding: .5em 1.5em;
+    text-decoration: none;
+  }
+
+  .profile-button:hover {
+    border-color: #fff;
+    color: #fff;
+  } 
 </style>
