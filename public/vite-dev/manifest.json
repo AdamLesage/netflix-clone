@@ -1,23 +1,13 @@
 {
   "entrypoints/application.css": {
-<<<<<<< HEAD
-    "file": "assets/application-daf8324c.css",
-=======
-    "file": "assets/application-e3402e62.css",
->>>>>>> refs/remotes/origin/main
+    "file": "assets/application-ddc56602.css",
     "src": "entrypoints/application.css"
   },
   "entrypoints/application.js": {
     "css": [
-<<<<<<< HEAD
-      "assets/application-daf8324c.css"
+      "assets/application-ddc56602.css"
     ],
-    "file": "assets/application-56619c1d.js",
-=======
-      "assets/application-e3402e62.css"
-    ],
-    "file": "assets/application-424ad77d.js",
->>>>>>> refs/remotes/origin/main
+    "file": "assets/application-889a4b8d.js",
     "isEntry": true,
     "src": "entrypoints/application.js"
   }

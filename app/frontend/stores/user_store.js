@@ -17,8 +17,13 @@ export const UserStore = defineStore('userStore', {
       } catch (error) {
         console.error('Une erreur s\'est produite lors de la récupération des utilisateurs :', error);
       }
-    }
+    },
     
+    async setCurrentUser(user) {
+      this.currentUser = user;
+      console.log("Current user :")
+      console.log(this.currentUser)
+    }
   },
 
   getters: {

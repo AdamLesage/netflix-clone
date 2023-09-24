@@ -3,12 +3,10 @@
     <div class="list-profiles">
       <div class="profile-gate-label">Qui est-ce ?</div>
       <div class="choose-profile">
-        <div v-for="user in userStore.getUsers" class="profile">
-          <a>
+        <div v-for="user in userStore.getUsers" class="profile" @click="selectUser(user)">
+          <a href="/browse">
             <div class="profile-icon">
-              <v-img
-                :src="user.image.image_link"
-              ></v-img>
+              <v-img :src="user.image.image_link" class="image-profile"></v-img>
             </div>
             <span class="profile-name">{{ user.username }}</span>
           </a>
@@ -30,7 +28,12 @@ export default {
 
   created() {
     this.userStore.setUsers();
-    console.log(this.userStore.getUsers);
+  },
+
+  methods: {
+    selectUser(user) {
+      this.userStore.setCurrentUser(user);
+    },
   },
 
 };
@@ -91,7 +94,7 @@ export default {
   }
 
   .profile-name {
-    color: grey;
+    color: white;
     display: block;
     font-size: 1.3vw;
     line-height: 1.2em;
@@ -101,4 +104,16 @@ export default {
     text-align: center;
     text-overflow: ellipsis;
   }
+
+  .image-profile {
+    height: 100%;
+    width: 100%;
+    border: 5px solid #141414;
+    transition: border-color 0.1s;
+  }
+  
+  .image-profile:hover {
+    border-color: #fff;
+  }
+  
 </style>
