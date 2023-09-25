@@ -5,8 +5,12 @@ import { mdi } from 'vuetify/iconsets/mdi';
 import { createVuetify } from 'vuetify';
 import * as components from 'vuetify/components';
 import * as directives from 'vuetify/directives';
-import HomePage from '../components/HomePage.vue';
 import axios from 'axios';
+
+
+import HomePage from '../components/HomePage.vue';
+import ManageProfiles from '../components/ManageProfiles.vue';
+
 
 const vuetify = createVuetify({
   components,
@@ -26,6 +30,7 @@ window.$http = axios;
 axios.defaults.headers.common['X-CSRF-Token'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
 app.component('HomePage', HomePage);
+app.component('ManageProfiles', ManageProfiles);
 app.use(vuetify);
 app.use(pinia)
 
