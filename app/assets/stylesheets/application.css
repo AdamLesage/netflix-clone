@@ -19,4 +19,17 @@
 body {
   background-color: #141414;
   text-decoration: none;
+  font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+}
+
+span {
+  color: #fff;
+}
+
+h1 {
+  color: #fff;
+}
+
+div {
+  color: #fff;
 }

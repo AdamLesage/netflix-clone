@@ -21,12 +21,11 @@ export const UserStore = defineStore('userStore', {
     
     async setCurrentUser(user) {
       this.currentUser = user;
-      console.log("Current user :")
-      console.log(this.currentUser)
     }
   },
 
   getters: {
     getUsers: (state) => state.users,
+    getCurrentUser: (state) => state.currentUser,
   },
 })
