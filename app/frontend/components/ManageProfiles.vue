@@ -35,8 +35,8 @@
               <div class="main-edit-parent"></div>
             </div>
 
-            <button class="profile-button preferred-action">Enregistrer</button>
-            <button class="profile-button">Annuler</button>
+            <button class="profile-button preferred-action" @click="editProfile">Enregistrer</button>
+            <button class="profile-button" @click="dialogEditProfile = false">Annuler</button>
           </div>
         </div>
       </v-card>
@@ -68,6 +68,11 @@ export default {
 			this.userStore.setCurrentUser(user);
       this.dialogEditProfile = true;
 		},
+
+    editProfile() {
+      this.dialogEditProfile = false;
+      // this.userStore.editUser(this.userStore.getCurrentUser);
+    },
 	},
 
 };

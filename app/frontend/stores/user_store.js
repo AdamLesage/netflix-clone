@@ -21,6 +21,15 @@ export const UserStore = defineStore('userStore', {
     
     async setCurrentUser(user) {
       this.currentUser = user;
+    },
+
+    async editUser(user) {
+      try {
+        await axios.put(`/users/${user.id}.json`, { user: user });
+        this.setUsers();
+      } catch (error) {
+        console.error('Une erreur s\'est produite lors de la mise à jour de l\'utilisateur :', error);
+      }
     }
   },
 

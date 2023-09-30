@@ -10,6 +10,7 @@ import axios from 'axios';
 
 import HomePage from '../components/HomePage.vue';
 import ManageProfiles from '../components/ManageProfiles.vue';
+import BrowsePage from '../components/BrowsePage.vue';
 
 
 const vuetify = createVuetify({
@@ -31,6 +32,7 @@ axios.defaults.headers.common['X-CSRF-Token'] = document.querySelector('meta[nam
 
 app.component('HomePage', HomePage);
 app.component('ManageProfiles', ManageProfiles);
+app.component('BrowsePage', BrowsePage);
 app.use(vuetify);
 app.use(pinia)
 
