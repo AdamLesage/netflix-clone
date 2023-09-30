@@ -13,7 +13,21 @@
         </div>
 
         <div class="tabbed-secondary-navigation">
+          <div class="nav-element">
+            <div class="search-box">
+              <v-icon dark>mdi-magnify</v-icon>
+            </div>
+          </div>
 
+          <div class="nav-element">
+            <v-icon>mdi-bell-outline</v-icon>
+          </div>
+
+          <div class="nav-element">
+            <div class="account-menu-item">
+              <img src="https://www.pngall.com/wp-content/uploads/4/Netflix-Logo-HD.png" style="width: 30px;"/>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -21,9 +35,14 @@
 </template>
 
 <script>
+  import { UserStore } from '@/stores/user_store';
+
   export default {
     data() {
       return {
+        // Stores
+        userStore: UserStore(),
+
         fixHeaderCategories: [
           { name: 'Accueil', link: '/browse' },
           { name: 'Séries', link: '/browse/series' },
@@ -33,6 +52,10 @@
           { name: 'Explorer par langue', link: '/browse/original-audio' },
         ]
       };
+    },
+
+    created() {
+      console.log(this.userStore.getCurrentUser);
     },
 
   };
@@ -114,6 +137,7 @@
     position: absolute;
     right: 4%;
     top: 0;
+    width: 10%;
   }
 
   .div-logo-netflix-navbar {
@@ -121,5 +145,26 @@
     display: flex;
     margin: 0 30px;
     padding: 20px;
+  }
+
+  .nav-element {
+    margin-right: 15px;
+  }
+
+  .search-box {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .account-menu-item {
+    display: block;
+    font-size: 12px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .image-profile-navbar {
+    height: 3%;
+    width: 3%;
   }
 </style>
