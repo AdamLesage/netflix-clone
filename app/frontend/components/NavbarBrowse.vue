@@ -23,9 +23,12 @@
             <v-icon>mdi-bell-outline</v-icon>
           </div>
 
-          <div class="nav-element">
+          <div class="nav-element" @mouseenter="isNavbarProfileHover = true" @mouseleave="isNavbarProfileHover = false">
             <div class="account-menu-item">
-              <img src="https://www.pngall.com/wp-content/uploads/4/Netflix-Logo-HD.png" style="width: 30px;"/>
+              <img v-if="userStore.getCurrentUser" :src="userStore.getCurrentUser.image.image_link" style="width: 30px;"/>
+              <v-icon class="rotate-icon" :class="{ 'rotate-180': isNavbarProfileHover }">
+                mdi-chevron-down
+              </v-icon>
             </div>
           </div>
         </div>
@@ -43,6 +46,8 @@
         // Stores
         userStore: UserStore(),
 
+        isNavbarNotificationHover: false,
+        isNavbarProfileHover: false,
         fixHeaderCategories: [
           { name: 'Accueil', link: '/browse' },
           { name: 'Séries', link: '/browse/series' },
@@ -152,14 +157,24 @@
   }
 
   .account-menu-item {
-    display: block;
     font-size: 12px;
     position: relative;
     z-index: 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 
   .image-profile-navbar {
     height: 3%;
     width: 3%;
+  }
+
+  .rotate-icon {
+    transition: transform 0.3s ease; /* Ajoutez une transition de rotation */
+  }
+  
+  .rotate-180 {
+    transform: rotate(180deg); /* Applique une rotation de 180 degrés */
   }
 </style>

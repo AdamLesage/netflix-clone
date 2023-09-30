@@ -32,7 +32,6 @@ export const UserStore = defineStore('userStore', {
     async setCurrentUser() {
       try {
         const response = await axios.get('/get_current_user.json');
-        console.log(response.data);
         this.currentUser = response.data;
       } catch (error) {
         console.error('Une erreur s\'est produite lors de la récupération de l\'utilisateur :', error);
