@@ -19,8 +19,24 @@ export const UserStore = defineStore('userStore', {
       }
     },
     
-    async setCurrentUser(user) {
-      this.currentUser = user;
+    async setLogCurrentUser(user) {
+      try {
+        await axios.get(`/set_current_user.json?userId=${user.id}`);
+        this.currentUser = user;
+        console.log(this.currentUser);
+      } catch (error) {
+        console.error('Une erreur s\'est produite lors de la récupération de l\'utilisateur :', error);
+      }
+    },
+
+    async setCurrentUser() {
+      try {
+        const response = await axios.get('/get_current_user.json');
+        console.log(response.data);
+        this.currentUser = response.data;
+      } catch (error) {
+        console.error('Une erreur s\'est produite lors de la récupération de l\'utilisateur :', error);
+      }
     },
 
     async editUser(user) {

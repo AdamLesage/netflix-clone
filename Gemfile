@@ -20,7 +20,7 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 
 gem 'vite_rails' 
 
-gem 'devise'
+gem 'devise', '~> 4.8'
 
 gem 'rails_12factor', group: :production
 

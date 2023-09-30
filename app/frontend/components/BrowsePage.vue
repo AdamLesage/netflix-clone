@@ -5,13 +5,18 @@
 </template>
 
 <script>
+import { UserStore } from '@/stores/user_store';
+
   export default {
     data() {
       return {
-
+        userStore: UserStore(),
       };
     },
 
+    created() {
+      this.userStore.setCurrentUser();
+    },
   };
 </script>
 

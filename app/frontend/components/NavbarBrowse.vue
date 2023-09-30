@@ -53,11 +53,6 @@
         ]
       };
     },
-
-    created() {
-      console.log(this.userStore.getCurrentUser);
-    },
-
   };
 </script>
 

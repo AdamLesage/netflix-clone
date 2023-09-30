@@ -4,7 +4,7 @@
       <div class="profile-gate-label">Qui est-ce ?</div>
       <div class="choose-profile">
         <div v-for="user in userStore.getUsers" class="profile" @click="selectUser(user)">
-          <a href="/browse" style="text-decoration: none;">
+          <a style="text-decoration: none;">
             <div class="profile-icon">
               <v-img :src="user.image.image_link" class="image-profile"></v-img>
             </div>
@@ -31,15 +31,17 @@ export default {
   },
 
   created() {
-    this.userStore.setUsers();
+		this.userStore.setUsers();
   },
 
   methods: {
     selectUser(user) {
-      this.userStore.setCurrentUser(user);
+      this.userStore.setLogCurrentUser(user)
+        .then(() => {
+          window.location.href = '/browse';
+        });
     },
   },
-
 };
 </script>
 
