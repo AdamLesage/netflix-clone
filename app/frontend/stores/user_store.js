@@ -6,6 +6,7 @@ export const UserStore = defineStore('userStore', {
     return {
       users: [],
       currentUser: null,
+      usersExceptCurrentUser: [],
     }
   },
 
@@ -18,7 +19,7 @@ export const UserStore = defineStore('userStore', {
         console.error('Une erreur s\'est produite lors de la récupération des utilisateurs :', error);
       }
     },
-    
+
     async setLogCurrentUser(user) {
       try {
         await axios.get(`/set_current_user.json?userId=${user.id}`);
@@ -38,6 +39,15 @@ export const UserStore = defineStore('userStore', {
       }
     },
 
+    async setUsersExpectCurrentUser() {
+      try {
+        const response = await axios.get('/get_user_except_current_user.json');
+        this.usersExceptCurrentUser = response.data.user;
+      } catch (error) {
+        console.error('Une erreur s\'est produite lors de la récupération des utilisateurs :', error);
+      }
+    },
+
     async editUser(user) {
       try {
         await axios.put(`/users/${user.id}.json`, { user: user });
@@ -51,5 +61,6 @@ export const UserStore = defineStore('userStore', {
   getters: {
     getUsers: (state) => state.users,
     getCurrentUser: (state) => state.currentUser,
+    getUsersExceptCurrentUser: (state) => state.usersExceptCurrentUser,
   },
 })

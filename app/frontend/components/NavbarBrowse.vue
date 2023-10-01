@@ -29,6 +29,17 @@
               <v-icon class="rotate-icon" :class="{ 'rotate-180': isNavbarProfileHover }">
                 mdi-chevron-down
               </v-icon>
+
+              <div class="account-dropdown-button">
+                <div v-if="isNavbarProfileHover" class="dropdown-container">
+                  <div v-for="user in userStore.getUsersExceptCurrentUser" class="item-user-clickable">
+                    <div>
+                      <v-img :src="user.image.image_link" class="drop-down-image"></v-img>
+                    </div>
+                    <span>{{ user.username }}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -171,10 +182,31 @@
   }
 
   .rotate-icon {
-    transition: transform 0.3s ease; /* Ajoutez une transition de rotation */
+    transition: transform 0.3s ease;
   }
   
   .rotate-180 {
-    transform: rotate(180deg); /* Applique une rotation de 180 degrés */
+    transform: rotate(180deg);
+  }
+
+  .account-dropdown-button {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    width: 10%;
+  }
+
+  .dropdown-container {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .drop-down-image {
+    height: 30px;
+    width: 30px;
   }
 </style>

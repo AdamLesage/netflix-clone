@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get '/ManageProfiles', to: 'manage_profiles#index'
 
   get '/set_current_user', to: 'users#set_current_user', as: :set_current_user
-  get '/get_current_user', to: 'users#get_current_user', as: :get_current_user
+  get '/get_current_user', to: 'users#get_current_user', as: :get_current_userg
+  get '/get_user_except_current_user', to: 'users#get_user_except_current_user', as: :get_user_except_current_user
 end

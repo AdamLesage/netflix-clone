@@ -16,6 +16,8 @@ import { UserStore } from '@/stores/user_store';
 
     created() {
       this.userStore.setCurrentUser();
+      this.userStore.setUsers();
+      this.userStore.setUsersExpectCurrentUser();
     },
   };
 </script>

@@ -116,6 +116,7 @@ export default {
     width: 100%;
     border: 5px solid #141414;
     transition: border-color 0.1s;
+    cursor: pointer;
   }
   
   .image-profile:hover {

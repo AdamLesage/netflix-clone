@@ -7,6 +7,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def get_user_except_current_user
+    @users = User.where.not(id: current_user.id)
+
+    respond_to do |format|
+      format.json { render '/users/users' }
+    end
+  end
+
   def set_current_user
     @user = User.find_by(id: params[:userId])
   
