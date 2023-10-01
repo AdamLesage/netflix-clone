@@ -23,20 +23,27 @@
             <v-icon>mdi-bell-outline</v-icon>
           </div>
 
-          <div class="nav-element" @mouseenter="isNavbarProfileHover = true" @mouseleave="isNavbarProfileHover = false">
-            <div class="account-menu-item">
+    <div class="nav-element" @mouseenter="isNavbarProfileHover = true" @mouseleave="isNavbarProfileHover = false" style="height: 100%;">
+            <div class="account-menu-item" style="height: 100%;">
               <img v-if="userStore.getCurrentUser" :src="userStore.getCurrentUser.image.image_link" style="width: 30px;"/>
               <v-icon class="rotate-icon" :class="{ 'rotate-180': isNavbarProfileHover }">
                 mdi-chevron-down
               </v-icon>
 
               <div class="account-dropdown-button">
-                <div v-if="isNavbarProfileHover" class="dropdown-container">
+                <div v-if="isNavbarProfileHover" class="dropdown-container" @mouseenter="isNavbarProfileHover = true" @mouseleave="isNavbarProfileHover = false">
                   <div v-for="user in userStore.getUsersExceptCurrentUser" class="item-user-clickable">
                     <div>
                       <v-img :src="user.image.image_link" class="drop-down-image"></v-img>
                     </div>
-                    <span>{{ user.username }}</span>
+                    <span class="navbar-profile-text">{{ user.username }}</span>
+                  </div>
+
+                  <div v-for="parameter in navbarProfileParemeters" class="item-user-clickable">
+                    <div>
+                      <v-icon class="drop-down-image">{{ parameter.icon }}</v-icon>
+                    </div>
+                    <a :href="parameter.link" class="navbar-profile-text">{{ parameter.name }}</a>
                   </div>
                 </div>
               </div>
@@ -66,7 +73,10 @@
           { name: 'Nouveautés les plus regardées', link: '/latest' },
           { name: 'Ma liste', link: '/browse/my-list' },
           { name: 'Explorer par langue', link: '/browse/original-audio' },
-        ]
+        ],
+        navbarProfileParemeters: [
+          { name: 'Gérer les profils', link: '/ManageProfiles', icon: 'mdi-pencil' },
+        ],
       };
     },
   };
@@ -200,13 +210,37 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: white;
-    border: 1px solid #ccc;
+    background-color: rgba(20, 20, 20, 0.7);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-  }
+    height: 100px;
+}
 
   .drop-down-image {
     height: 30px;
     width: 30px;
+  }
+
+  .item-user-clickable {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .navbar-profile-text {
+    color: #e5e5e5;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    transition: color .1s ease-in;
+    margin-right: 120px;
+  }
+
+  .navbar-profile-text:hover {
+    text-decoration: underline;
   }
 </style>
