@@ -14,6 +14,10 @@
 				<div class="billboard-title">
 					<v-img :src="trailerStore.getTrailer.logo_url" class="title-logo"></v-img>
 				</div>
+
+				<div class="info-synopsis info-margin">
+					<div>{{ trailerStore.getTrailer.description }}</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -128,6 +132,20 @@ export default {
 
 	.title-logo {
 		transform-origin: bottom left;
+		width: 100%;
+	}
+
+	.info-margin {
+		margin: .5vw 0 0;
+	}
+
+	.info-synopsis {
+		color: #fff;
+		font-size: 1.2vw;
+		font-weight: 400;
+		line-height: normal;
+		margin-top: .1vw;
+		text-shadow: 2px 2px 4px rgba(0,0,0,.45);
 		width: 100%;
 	}
 </style>
