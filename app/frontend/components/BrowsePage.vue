@@ -1,5 +1,6 @@
 <template>
   <div class="browse-background">
+    <main-view></main-view>
     <navbar-browse></navbar-browse>
   </div>
 </template>

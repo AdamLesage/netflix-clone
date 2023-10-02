@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import axios from 'axios';
 
-export const UserStore = defineStore('userStore', {
+export const TrailerStore = defineStore('trailerStore', {
   state: () => {
     return {
       trailer: {},
@@ -11,7 +11,7 @@ export const UserStore = defineStore('userStore', {
   actions: {
     async setTrailer() {
       try {
-        const response = await axios.get('/get_trailer.json');
+        const response = await axios.get('/trailers.json');
         this.trailer = response.data;
       } catch (error) {
         console.error('Une erreur s\'est produite lors de la récupération de la bande annonce :', error);

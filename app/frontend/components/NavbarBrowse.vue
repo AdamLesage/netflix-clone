@@ -88,7 +88,7 @@
     top: 0;
     height: auto;
     min-height: 70px;
-    z-index: 1;
+    z-index: 10;
   }
 
   .fix-header-container {
@@ -205,14 +205,14 @@
     display: flex;
     width: 10%;
   }
-
+  
   .dropdown-container {
-    position: absolute;
-    top: 100%;
-    left: 0;
     background-color: rgba(20, 20, 20, 0.7);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
     height: 100px;
+    position: absolute;
+    top: 100%;
+    left: 0;
 }
 
   .drop-down-image {
