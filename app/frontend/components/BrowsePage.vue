@@ -6,20 +6,24 @@
 
 <script>
 import { UserStore } from '@/stores/user_store';
+import { TrailerStore } from '@/stores/trailer_store';
 
-  export default {
-    data() {
-      return {
-        userStore: UserStore(),
-      };
-    },
+export default {
+  data() {
+    return {
+      // Stores
+      userStore: UserStore(),
+			trailerStore: TrailerStore(),
+    };
+  },
 
-    created() {
-      this.userStore.setCurrentUser();
-      this.userStore.setUsers();
-      this.userStore.setUsersExpectCurrentUser();
-    },
-  };
+  created() {
+    this.userStore.setCurrentUser();
+    this.userStore.setUsers();
+    this.userStore.setUsersExpectCurrentUser();
+		this.trailerStore.setTrailer();
+  },
+};
 </script>
 
 <style>

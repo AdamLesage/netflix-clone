@@ -12,6 +12,7 @@ import HomePage from '../components/HomePage.vue';
 import ManageProfiles from '../components/ManageProfiles.vue';
 import BrowsePage from '../components/BrowsePage.vue';
 import NavbarBrowse from '../components/NavbarBrowse.vue';
+import MainView from '../components/MainView.vue';
 
 
 const vuetify = createVuetify({
@@ -35,6 +36,7 @@ app.component('HomePage', HomePage);
 app.component('ManageProfiles', ManageProfiles);
 app.component('BrowsePage', BrowsePage);
 app.component('NavbarBrowse', NavbarBrowse);
+app.component('MainView', MainView);
 app.use(vuetify);
 app.use(pinia)
 
