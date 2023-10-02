@@ -106,6 +106,7 @@ export default {
 
 	.image-layer {
 		z-index: 5;
+		opacity: 0.8;
 	}
 
 	.fill-container {
