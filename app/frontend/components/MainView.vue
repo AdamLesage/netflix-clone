@@ -18,6 +18,22 @@
 				<div class="info-synopsis info-margin">
 					<div>{{ trailerStore.getTrailer.description }}</div>
 				</div>
+
+				<div class="billboard-links button-layer">
+					<a class="link-button-browse">
+						<button class="has-icon button-play" style="padding-left: 2rem; padding-right: 2.4rem;">
+							<v-icon>mdi-play</v-icon>
+							<div style="width: 1rem;"></div>
+							<span class="button-play-text">Lecture</span>
+						</button>
+
+						<button class="has-icon button-more-info" style="padding-left: 2rem; padding-right: 2.4rem;">
+							<v-icon>mdi-information-outline</v-icon>
+							<div style="width: 1rem;"></div>
+							<span class="button-more-info-text">Plus d'infos</span>
+						</button>
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -147,5 +163,87 @@ export default {
 		margin-top: .1vw;
 		text-shadow: 2px 2px 4px rgba(0,0,0,.45);
 		width: 100%;
+	}
+
+	.billboard-links {
+		display: flex;
+		line-height: 88%;
+		margin-top: 1.5vw;
+		white-space: nowrap;
+	}
+
+	.button-layer {
+		position: relative;
+		z-index: 9;
+	}
+
+	.button-play {
+		background-color: white;
+		color: black;
+	}
+
+	.button-play:hover {
+		background-color: rgba(255, 255, 255, 0.6);
+		color: black;
+	}
+
+	.button-more-info {
+		background-color: rgba(109, 109, 110, 0.6);
+		color: white;
+	}
+
+	.button-more-info:hover {
+		background-color: rgba(109, 109, 110, 0.3);
+		color: white;
+	}
+
+	.has-icon {
+		display: flex;
+		align-items: center;
+		-moz-box-align: center;
+		align-items: center;
+		appearance: none;
+		border: 0px none;
+		border-radius: 4px;
+		cursor: pointer;
+		display: flex;
+		-moz-box-pack: center;
+		justify-content: center;
+		opacity: 1;
+		padding: 0.8rem;
+			padding-right: 0.8rem;
+			padding-left: 0.8rem;
+		position: relative;
+		user-select: none;
+		will-change: background-color, color;
+		word-break: break-word;
+		white-space: nowrap;
+	}
+
+	.button-play-text {
+		display: block;
+		font-size: 1.6rem;
+		font-weight: 500;
+		line-height: 2.4rem;
+		color: black;
+	}
+
+	.button-more-info-text {
+		display: block;
+		font-size: 1.6rem;
+		font-weight: 500;
+		line-height: 2.4rem;
+		color: white;
+	}
+
+	.link-button-browse {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		color: #fff;
+		cursor: pointer;
+		text-decoration: none;
+		background-color: transparent;
+		gap: 25px;
 	}
 </style>
