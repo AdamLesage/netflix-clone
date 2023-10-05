@@ -1,42 +1,47 @@
 <template>
-	<div class="billboard">
-		<div class="billboard-motion">
-			<div class="bottom-layer full-screen">
-				<div class="hero-image-wrapper">
-					<v-img :src="trailerStore.getTrailer.picture_url" class="static-image image-layer"></v-img>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="fill-container">
-		<div class="info meta-layer">
-			<div class="logo-and-text">
-				<div class="billboard-title">
-					<v-img :src="trailerStore.getTrailer.logo_url" class="title-logo"></v-img>
-				</div>
+  <div style="display: flex; flex-wrap: wrap;">
+    <div class="billboard">
+      <div class="billboard-motion">
+        <div class="bottom-layer full-screen">
+          <div class="hero-image-wrapper">
+            <v-img :src="trailerStore.getTrailer.picture_url" class="static-image image-layer"></v-img>
+          </div>
+        </div>
+      </div>
+    </div>
 
-				<div class="info-synopsis info-margin">
-					<div>{{ trailerStore.getTrailer.description }}</div>
-				</div>
+    <div class="fill-container">
+      <div class="info meta-layer">
+        <div class="logo-and-text">
+          <div class="billboard-title">
+            <v-img :src="trailerStore.getTrailer.logo_url" class="title-logo"></v-img>
+          </div>
 
-				<div class="billboard-links button-layer">
-					<a class="link-button-browse">
-						<button class="has-icon button-play" style="padding-left: 2rem; padding-right: 2.4rem;">
-							<v-icon>mdi-play</v-icon>
-							<div style="width: 1rem;"></div>
-							<span class="button-play-text">Lecture</span>
-						</button>
+          <div class="info-synopsis info-margin">
+            <div>{{ trailerStore.getTrailer.description }}</div>
+          </div>
 
-						<button class="has-icon button-more-info" style="padding-left: 2rem; padding-right: 2.4rem;">
-							<v-icon>mdi-information-outline</v-icon>
-							<div style="width: 1rem;"></div>
-							<span class="button-more-info-text">Plus d'infos</span>
-						</button>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+          <div class="billboard-links button-layer">
+            <a class="link-button-browse">
+              <button class="has-icon button-play" style="padding-left: 2rem; padding-right: 2.4rem;">
+                <v-icon>mdi-play</v-icon>
+                <div style="width: 1rem;"></div>
+                <span class="button-play-text">Lecture</span>
+              </button>
+
+              <button class="has-icon button-more-info" style="padding-left: 2rem; padding-right: 2.4rem;">
+                <v-icon>mdi-information-outline</v-icon>
+                <div style="width: 1rem;"></div>
+                <span class="button-more-info-text">Plus d'infos</span>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <videos-display-on-line></videos-display-on-line>
+  </div>
 </template>
 
 <script>
@@ -85,7 +90,6 @@ export default {
 		background-position: 50%;
 		background-size: cover;
 		bottom: 0;
-		-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
 		filter: alpha(opacity=100);
 		left: 0;
 		opacity: 1;
@@ -201,19 +205,17 @@ export default {
 	.has-icon {
 		display: flex;
 		align-items: center;
-		-moz-box-align: center;
 		align-items: center;
 		appearance: none;
 		border: 0px none;
 		border-radius: 4px;
 		cursor: pointer;
 		display: flex;
-		-moz-box-pack: center;
 		justify-content: center;
 		opacity: 1;
-		padding: 0.8rem;
-			padding-right: 0.8rem;
-			padding-left: 0.8rem;
+    padding: 0.8rem;
+    padding-right: 0.8rem;
+    padding-left: 0.8rem;
 		position: relative;
 		user-select: none;
 		will-change: background-color, color;

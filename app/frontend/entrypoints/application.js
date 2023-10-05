@@ -13,6 +13,7 @@ import ManageProfiles from '../components/ManageProfiles.vue';
 import BrowsePage from '../components/BrowsePage.vue';
 import NavbarBrowse from '../components/NavbarBrowse.vue';
 import MainView from '../components/MainView.vue';
+import VideosDisplayOnLine from '../components/VideosDisplayOnLine.vue';
 
 
 const vuetify = createVuetify({
@@ -37,6 +38,8 @@ app.component('ManageProfiles', ManageProfiles);
 app.component('BrowsePage', BrowsePage);
 app.component('NavbarBrowse', NavbarBrowse);
 app.component('MainView', MainView);
+app.component('VideosDisplayOnLine', VideosDisplayOnLine);
+
 app.use(vuetify);
 app.use(pinia)
 

@@ -1,49 +1,51 @@
 <template>
-  <div class="fix-header">
-    <div class="fix-header-container" style="background-color: transparent;">
-      <div class="main-header has-billboard menu-navigation" style="display: flex;">
-        <a href="/browse" class="div-logo-netflix-navbar">
-          <v-img src="https://www.pngall.com/wp-content/uploads/4/Netflix-Logo-HD.png"></v-img>
-        </a>
+  <div>
+    <div class="fix-header">
+      <div class="fix-header-container" style="background-color: transparent;">
+        <div class="main-header has-billboard menu-navigation" style="display: flex;">
+          <a href="/browse" class="div-logo-netflix-navbar">
+            <v-img src="https://www.pngall.com/wp-content/uploads/4/Netflix-Logo-HD.png"></v-img>
+          </a>
 
-        <div class="tabbed-primary-navigation">
-          <div v-for="category in fixHeaderCategories">
-            <a :href="category.link" class="fix-header-categories">{{ category.name }}</a>
-          </div>
-        </div>
-
-        <div class="tabbed-secondary-navigation">
-          <div class="nav-element">
-            <div class="search-box">
-              <v-icon dark>mdi-magnify</v-icon>
+          <div class="tabbed-primary-navigation">
+            <div v-for="category in fixHeaderCategories">
+              <a :href="category.link" class="fix-header-categories">{{ category.name }}</a>
             </div>
           </div>
 
-          <div class="nav-element">
-            <v-icon>mdi-bell-outline</v-icon>
-          </div>
+          <div class="tabbed-secondary-navigation">
+            <div class="nav-element">
+              <div class="search-box">
+                <v-icon dark>mdi-magnify</v-icon>
+              </div>
+            </div>
 
-    <div class="nav-element" @mouseenter="isNavbarProfileHover = true" @mouseleave="isNavbarProfileHover = false" style="height: 100%;">
-            <div class="account-menu-item" style="height: 100%;">
-              <img v-if="userStore.getCurrentUser" :src="userStore.getCurrentUser.image.image_link" style="width: 30px;"/>
-              <v-icon class="rotate-icon" :class="{ 'rotate-180': isNavbarProfileHover }">
-                mdi-chevron-down
-              </v-icon>
+            <div class="nav-element">
+              <v-icon>mdi-bell-outline</v-icon>
+            </div>
 
-              <div class="account-dropdown-button">
-                <div v-if="isNavbarProfileHover" class="dropdown-container" @mouseenter="isNavbarProfileHover = true" @mouseleave="isNavbarProfileHover = false">
-                  <div v-for="user in userStore.getUsersExceptCurrentUser" class="item-user-clickable">
-                    <div>
-                      <v-img :src="user.image.image_link" class="drop-down-image"></v-img>
+            <div class="nav-element" @mouseenter="isNavbarProfileHover = true" @mouseleave="isNavbarProfileHover = false" style="height: 100%;">
+              <div class="account-menu-item" style="height: 100%;">
+                <img v-if="userStore.getCurrentUser" :src="userStore.getCurrentUser.image.image_link" style="width: 30px;"/>
+                <v-icon class="rotate-icon" :class="{ 'rotate-180': isNavbarProfileHover }">
+                  mdi-chevron-down
+                </v-icon>
+
+                <div class="account-dropdown-button">
+                  <div v-if="isNavbarProfileHover" class="dropdown-container" @mouseenter="isNavbarProfileHover = true" @mouseleave="isNavbarProfileHover = false">
+                    <div v-for="user in userStore.getUsersExceptCurrentUser" class="item-user-clickable">
+                      <div>
+                        <v-img :src="user.image.image_link" class="drop-down-image"></v-img>
+                      </div>
+                      <span class="navbar-profile-text">{{ user.username }}</span>
                     </div>
-                    <span class="navbar-profile-text">{{ user.username }}</span>
-                  </div>
 
-                  <div v-for="parameter in navbarProfileParemeters" class="item-user-clickable">
-                    <div>
-                      <v-icon class="drop-down-image">{{ parameter.icon }}</v-icon>
+                    <div v-for="parameter in navbarProfileParemeters" class="item-user-clickable">
+                      <div>
+                        <v-icon class="drop-down-image">{{ parameter.icon }}</v-icon>
+                      </div>
+                      <a :href="parameter.link" class="navbar-profile-text">{{ parameter.name }}</a>
                     </div>
-                    <a :href="parameter.link" class="navbar-profile-text">{{ parameter.name }}</a>
                   </div>
                 </div>
               </div>
@@ -52,6 +54,7 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
