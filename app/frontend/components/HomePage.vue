@@ -3,12 +3,17 @@
     <div class="list-profiles">
       <div class="profile-gate-label">Qui est-ce ?</div>
       <div class="choose-profile">
-        <div v-for="user in userStore.getUsers" class="profile" @click="selectUser(user)">
+        <div v-for="user in userStore.getUsers"
+          @click="selectUser(user)"
+          @mouseenter="hoverProfileId = user.id"
+          @mouseleave="hoverProfileId = null"
+          class="profile"
+        >
           <a style="text-decoration: none;">
             <div class="profile-icon">
               <v-img :src="user.image.image_link" class="image-profile"></v-img>
             </div>
-            <span class="profile-name">{{ user.username }}</span>
+            <span :class="hoverProfileId !== user.id ? 'profile-name' : 'profile-name-hover'">{{ user.username }}</span>
           </a>
         </div>
       </div>
@@ -27,6 +32,8 @@ export default {
   data() {
     return {
       userStore: UserStore(),
+
+      hoverProfileId: null,
     };
   },
 
@@ -100,7 +107,19 @@ export default {
   }
 
   .profile-name {
-    color: white;
+    color: grey;
+    display: block;
+    font-size: 1.3vw;
+    line-height: 1.2em;
+    margin: .6em 0;
+    min-height: 1.8em;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+  }
+
+  .profile-name-hover {
+    color: #fff;
     display: block;
     font-size: 1.3vw;
     line-height: 1.2em;
